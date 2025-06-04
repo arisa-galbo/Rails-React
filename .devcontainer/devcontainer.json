@@ -11,9 +11,17 @@
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/rails/devcontainer/features/activestorage": {},
-    "ghcr.io/rails/devcontainer/features/sqlite3": {}
+    "ghcr.io/rails/devcontainer/features/sqlite3": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
   },
 
+    "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+  ],
+  
   "containerEnv": {
     "CAPYBARA_SERVER_PORT": "45678",
     "SELENIUM_HOST": "selenium",
