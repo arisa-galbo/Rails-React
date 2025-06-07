@@ -6,7 +6,7 @@ export default {
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,     // SPAモードに変更 サーバーサイドの機能はrails、愚論とはreactが担当
   buildEnd: async () => {
-    await rm("../public/react/router",{recursive: true, force: true}) //ビルドの後実行でいいのですか？次回の実行に備えて削除
+    await rm("../public/react-router",{recursive: true, force: true}) //ビルドの後実行でいいのですか？次回の実行に備えて削除
     await rename("build/client/index.html", "build/client/react-router-index.html")
     //ブラウザから直接アクセスせず、railsのcontroller経由でアクセスしてもらうため
     //publicに入ったファイルはデフォルトではコントローラを経由しない
