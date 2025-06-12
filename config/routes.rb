@@ -11,10 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "react-router", to: redirect("/react-router/"), constraints: ->(req) {
-      req.original_url.last != "/"
-    }
-  match "react-router", to: "react#show", via: :all
-  get "react-router/*path", to: "react#show"
+  get "react-router", to: "react#show"
+  get "react-router/", to: "react#show"
+  match "react-router/*path", to: "react#show", via: :all
     #メソッドに関係なくパスの一致したアクセスをreact#showに割り当てる
 end

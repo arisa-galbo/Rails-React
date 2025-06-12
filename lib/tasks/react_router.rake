@@ -48,7 +48,7 @@ namespace :react_router do
   # Running bin/rails assets:clobber will also run this task.
   desc "ビルドされたpublic/reactディレクトリを削除しクリーンにする"
   task :clobber do
-    FileUtils.rm_rf("#{Dir.pwd}/public/react")
+    FileUtils.rm_rf("#{Dir.pwd}/public/react-router")
   end
 end
 

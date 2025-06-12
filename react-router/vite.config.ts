@@ -5,8 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-  base: '/react-router/',
+  base: '/react-router/', // 本番ビルド時のアセットパス
   server: {
+    host: true, // devcontainer対応: 外部からのアクセスを許可
     proxy: {   //開発用サーバのプロキシを設定
       "/api": {
         target: "http://localhost:3000",
